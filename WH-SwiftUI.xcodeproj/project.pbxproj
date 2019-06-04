@@ -27,6 +27,10 @@
 		C0CC281D22A6008B00EDA13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CC281C22A6008B00EDA13E /* Assets.xcassets */; };
 		C0CC282022A6008B00EDA13E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CC281F22A6008B00EDA13E /* Preview Assets.xcassets */; };
 		C0CC282522A6008B00EDA13E /* Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C0CC27FF22A6008900EDA13E /* Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0F52F1C22A721D000DB27A6 /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F52F1B22A721D000DB27A6 /* VideoList.swift */; };
+		C0F52F2022A722DE00DB27A6 /* PreviewVideos.json in Resources */ = {isa = PBXBuildFile; fileRef = C0F52F1F22A722DE00DB27A6 /* PreviewVideos.json */; };
+		C0F52F2222A7243700DB27A6 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F52F2122A7243700DB27A6 /* Video.swift */; };
+		C0F52F2422A724E700DB27A6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F52F2322A724E700DB27A6 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		C0CC281F22A6008B00EDA13E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0CC282122A6008B00EDA13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0CC282222A6008B00EDA13E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C0F52F1B22A721D000DB27A6 /* VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
+		C0F52F1F22A722DE00DB27A6 /* PreviewVideos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewVideos.json; sourceTree = "<group>"; };
+		C0F52F2122A7243700DB27A6 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		C0F52F2322A724E700DB27A6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,8 @@
 		C0CC27E722A5FF4F00EDA13E /* WH-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C0F52F1E22A7225B00DB27A6 /* Preview Resources */,
+				C0F52F1D22A721E000DB27A6 /* Video */,
 				C0CC27FC22A6000900EDA13E /* WH-SwiftUI.entitlements */,
 				C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */,
 				C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */,
@@ -224,6 +234,24 @@
 				C0CC281F22A6008B00EDA13E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0F52F1D22A721E000DB27A6 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				C0F52F1B22A721D000DB27A6 /* VideoList.swift */,
+				C0F52F2122A7243700DB27A6 /* Video.swift */,
+				C0F52F2322A724E700DB27A6 /* Data.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		C0F52F1E22A7225B00DB27A6 /* Preview Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0F52F1F22A722DE00DB27A6 /* PreviewVideos.json */,
+			);
+			path = "Preview Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +387,7 @@
 			files = (
 				C0CC27F522A5FF5100EDA13E /* LaunchScreen.storyboard in Resources */,
 				C0CC27F222A5FF5100EDA13E /* Preview Assets.xcassets in Resources */,
+				C0F52F2022A722DE00DB27A6 /* PreviewVideos.json in Resources */,
 				C0CC27EF22A5FF5100EDA13E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,8 +418,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */,
+				C0F52F2422A724E700DB27A6 /* Data.swift in Sources */,
+				C0F52F1C22A721D000DB27A6 /* VideoList.swift in Sources */,
 				C0CC27EB22A5FF4F00EDA13E /* SceneDelegate.swift in Sources */,
 				C0CC27ED22A5FF4F00EDA13E /* ContentView.swift in Sources */,
+				C0F52F2222A7243700DB27A6 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
