@@ -25,14 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = UIHostingController(rootView: ContentView())
         self.window = window
         window.makeKeyAndVisible()
-        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.getJsonFromUrl()
-        var i = 0
-        while (delegate.status == nil && i <= 10) {
-            sleep(1)
-            i += 1
-        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
