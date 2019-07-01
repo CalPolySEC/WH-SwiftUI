@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct ContentView : View {
-    let delegate = UIApplication.shared.delegate as! AppDelegate
-    
     var body: some View {
         VStack {
             Text("White Hat")
                 .font(.largeTitle)
-            Image(delegate.status)
+            HStack {
+                StatusImgView()
+                    .scaledToFit()
+            }
+                .padding()
             Spacer()
         }
     }
@@ -24,7 +26,7 @@ struct ContentView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE", "iPhone XR", "iPhone XS Max"].identified(by: \.self)) { deviceName in
+        ForEach(["iPhone XR"].identified(by: \.self)) { deviceName in
             ContentView()
         }
     }

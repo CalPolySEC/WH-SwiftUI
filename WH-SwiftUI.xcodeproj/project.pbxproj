@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C074559022CA87B100EA4132 /* StatusImgView.swift */; };
 		C09CA0B522A6014A00B28214 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09CA0B422A6014A00B28214 /* Stickers.xcassets */; };
-		C09CA0B922A6014A00B28214 /* Sticker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C09CA0B222A6014900B28214 /* Sticker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C09CA0B922A6014A00B28214 /* Sticker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C09CA0B222A6014900B28214 /* Sticker Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0A1F5CE22A72ED70020F29D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A1F5CD22A72ED70020F29D /* NotificationCenter.framework */; };
 		C0A1F5D122A72ED70020F29D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1F5D022A72ED70020F29D /* TodayViewController.swift */; };
 		C0A1F5D422A72ED70020F29D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A1F5D222A72ED70020F29D /* MainInterface.storyboard */; };
-		C0A1F5D822A72ED70020F29D /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0A1F5CB22A72ED70020F29D /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0A1F5D822A72ED70020F29D /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0A1F5CB22A72ED70020F29D /* Widget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0A1F5DD22A730310020F29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A1F5DC22A730310020F29D /* Assets.xcassets */; };
 		C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */; };
 		C0CC27EB22A5FF4F00EDA13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */; };
@@ -31,7 +32,7 @@
 		C0CC281B22A6008B00EDA13E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC281A22A6008B00EDA13E /* ComplicationController.swift */; };
 		C0CC281D22A6008B00EDA13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CC281C22A6008B00EDA13E /* Assets.xcassets */; };
 		C0CC282022A6008B00EDA13E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CC281F22A6008B00EDA13E /* Preview Assets.xcassets */; };
-		C0CC282522A6008B00EDA13E /* Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C0CC27FF22A6008900EDA13E /* Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0CC282522A6008B00EDA13E /* Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C0CC27FF22A6008900EDA13E /* Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C074559022CA87B100EA4132 /* StatusImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImgView.swift; sourceTree = "<group>"; };
 		C09CA0B222A6014900B28214 /* Sticker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sticker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09CA0B422A6014A00B28214 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		C09CA0B622A6014A00B28214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				C0CC27FC22A6000900EDA13E /* WH-SwiftUI.entitlements */,
 				C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */,
 				C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */,
+				C074559022CA87B100EA4132 /* StatusImgView.swift */,
 				C0CC27EC22A5FF4F00EDA13E /* ContentView.swift */,
 				C0CC27EE22A5FF5100EDA13E /* Assets.xcassets */,
 				C0CC27F322A5FF5100EDA13E /* LaunchScreen.storyboard */,
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */,
 				C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */,
 				C0CC27EB22A5FF4F00EDA13E /* SceneDelegate.swift in Sources */,
 				C0CC27ED22A5FF4F00EDA13E /* ContentView.swift in Sources */,
@@ -500,11 +504,13 @@
 /* Begin PBXTargetDependency section */
 		C09CA0B822A6014A00B28214 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = C09CA0B122A6014900B28214 /* Sticker Extension */;
 			targetProxy = C09CA0B722A6014A00B28214 /* PBXContainerItemProxy */;
 		};
 		C0A1F5D722A72ED70020F29D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = C0A1F5CA22A72ED70020F29D /* Widget */;
 			targetProxy = C0A1F5D622A72ED70020F29D /* PBXContainerItemProxy */;
 		};
@@ -515,6 +521,7 @@
 		};
 		C0CC282422A6008B00EDA13E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = C0CC27FE22A6008900EDA13E /* Watch App */;
 			targetProxy = C0CC282322A6008B00EDA13E /* PBXContainerItemProxy */;
 		};
