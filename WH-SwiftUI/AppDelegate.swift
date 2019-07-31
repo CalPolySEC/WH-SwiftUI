@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import Foundation
+import SystemConfiguration.CaptiveNetwork
+import CoreTelephony
+import SocketIO
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var npData: Dictionary<String, String>!
+    var ssid: String!
+    var ssidBool: Bool!
     var window: UIWindow?
     var status: String!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         getJsonFromUrl()
+        let _ = checkSpotifyLoad()
         var i = 0;
         while (status == nil && i <= 10) {
             sleep(1)
@@ -44,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    // MARK: Custom Functions
+    
     func getJsonFromUrl() {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
@@ -66,26 +75,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }).resume()
     }
-}
-
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
+    
+    var manager:SocketManager!
+    var socket:SocketIOClient!
+    
+    func checkSpotifyLoad() -> String {
+        let netType = "Wifi"
+        if (netType == "Wifi") {
+            let ssid = getSSID() ?? "nope"
+            self.ssid = ssid
+            print(self.ssid!)
+            if (ssid == "SecurityLab-5G" || ssid == "SecurityLab" || ssid == "l33th4x:)") {
+                self.ssidBool = true
+                self.manager = SocketManager(socketURL: URL(string: "http://play.wh")!, config: [.log(true), .compress, .reconnects(true)])
+                self.socket = self.manager.socket(forNamespace: "/devices")
+                
+                self.socket.on(clientEvent: .connect) {data, ack in
+                    self.socket.emit("test", ["data": "Hello from iOS!"])
+                    self.socket.emit("get_nowplaying")
+                }
+                self.socket.on("nowplaying") { (data, ack) -> Void in
+                    let dataArray: Array = data as Array
+                    let dataDict: Dictionary = dataArray[0] as! Dictionary<String, Any>
+                    self.npData = (dataDict["data"] as! Dictionary<String, String>)
+                }
+                self.socket.on("refresh") {data, ack in
+                    self.socket.emit("get_nowplaying")
+                }
+                self.socket.connect()
             }
-            }.resume()
+            else {
+                self.ssidBool = false
+                self.npData = ["artist": "Sick Individuals", "track": "Right Next to You (feat. Kepler)", "uri": "https://open.spotify.com/track/6OVDJvTvaBRHjpS5f5aNBL?si=NZGnSVAkSo-0cwSAQKbCnA", "img": "https://i.scdn.co/image/b16a8403c3a12cdb27fa758bad43aa23df79abad"]
+            }
+        }
+        return netType
     }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+    
+    func getSSID() -> String? {
+        var ssid: String?
+        if let interfaces = CNCopySupportedInterfaces() as NSArray? {
+            for interface in interfaces {
+                if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
+                    ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                    break
+                }
+            }
+        }
+        return ssid
     }
 }
-

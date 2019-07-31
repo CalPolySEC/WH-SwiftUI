@@ -9,16 +9,25 @@
 import SwiftUI
 
 struct ContentView : View {
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    @State var ssidBoolLoc = false
     var body: some View {
         VStack {
             Text("White Hat")
-                .font(.largeTitle)
+                .font(.custom("FiraCode-Retina", size: 42))
             HStack {
                 StatusImgView()
                     .scaledToFit()
             }
-                .padding()
+            .padding()
+            Toggle(isOn: $ssidBoolLoc) {
+                Text("SecLab")
+            }
+            .padding()
             Spacer()
+            if (delegate.ssidBool || ssidBoolLoc) {
+                SpotifyView()
+            }
         }
     }
 }
@@ -26,9 +35,7 @@ struct ContentView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone XR"].identified(by: \.self)) { deviceName in
-            ContentView()
-        }
+        ContentView()
     }
 }
 #endif

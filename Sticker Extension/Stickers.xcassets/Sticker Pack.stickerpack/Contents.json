@@ -1,4 +1,30 @@
 {
+  "stickers" : [
+    {
+      "filename" : "opens.sticker"
+    },
+    {
+      "filename" : "closeds.sticker"
+    },
+    {
+      "filename" : "coffees.sticker"
+    },
+    {
+      "filename" : "fires.sticker"
+    },
+    {
+      "filename" : "Sticker Sequence.stickersequence"
+    },
+    {
+      "filename" : "Enlightened.sticker"
+    },
+    {
+      "filename" : "WHBlack.sticker"
+    },
+    {
+      "filename" : "WHMaroon.sticker"
+    }
+  ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
