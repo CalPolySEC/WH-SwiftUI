@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView : View {
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    @State var ssidBoolLoc = false
+    @State var ssidBoolLoc = true
     var body: some View {
         VStack {
             Text("White Hat")

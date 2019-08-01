@@ -46,7 +46,7 @@ struct SpotifyView: View {
             }
             .frame(height: 100)
         }
-        .padding(0)
+        .padding()
     }
 }
 
