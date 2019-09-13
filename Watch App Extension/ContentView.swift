@@ -9,16 +9,63 @@
 import SwiftUI
 
 struct ContentView : View {
+    
+    @State var reload: Bool = false
+    @State var status: String = "nil"
+    let delegate = WKExtension.shared().delegate as! ExtensionDelegate
+    
     var body: some View {
         VStack {
             HStack {
-                WStatusImgView()
-                    .scaledToFit()
+                if (reload) {
+                    Image(status)
+                        .resizable()
+                        .scaledToFit()
+                }
+                else {
+                    Image(delegate.status)
+                        .resizable()
+                        .scaledToFit()
+                }
             }
-            ReloadButton()
+            Button(action: {
+                self.reloadFunc()
+                }) {
+                    Text("Reload")
+                        .padding()
+            }
             .padding()
             Spacer()
         }
+    }
+    
+    func reloadFunc() {
+        getJsonFromUrl()
+        sleep(5)
+        self.reload = true
+    }
+    
+    func getJsonFromUrl() {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        
+        let session = URLSession.init(configuration: config)
+        
+        let url = URL(string: "https://thewhitehat.club/api/v1/status")
+        session.dataTask(with:url!, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                let jStatus = json["data"] as? Dictionary<String, Any>
+                let jStatus2 = jStatus?["status"] as? String ?? "nil"
+                print(jStatus2)
+                self.status = jStatus2
+            } catch let error as NSError {
+                print(error)
+            }
+        }).resume()
     }
 }
 

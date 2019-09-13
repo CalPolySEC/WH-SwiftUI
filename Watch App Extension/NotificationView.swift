@@ -9,12 +9,19 @@
 import SwiftUI
 
 struct NotificationView : View {
+    
+    let delegate = WKExtension.shared().delegate as! ExtensionDelegate
+    
     var body: some View {
-        HStack {
-            WStatusImgView()
+        VStack {
+            HStack {
+                Image(delegate.status)
+                .resizable()
                 .scaledToFit()
+            }
+            .padding()
+            Spacer()
         }
-        .padding()
     }
 }
 

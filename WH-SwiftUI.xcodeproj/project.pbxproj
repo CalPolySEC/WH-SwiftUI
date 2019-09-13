@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		407A7BFB5EBB59B627B3C02C /* libPods-WH-SwiftUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */; };
-		C0450EEB232B422A00DC9F52 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0450EEA232B422A00DC9F52 /* ReloadButton.swift */; };
 		C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C074559022CA87B100EA4132 /* StatusImgView.swift */; };
 		C09CA0B522A6014A00B28214 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09CA0B422A6014A00B28214 /* Stickers.xcassets */; };
 		C09CA0B922A6014A00B28214 /* Sticker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C09CA0B222A6014900B28214 /* Sticker Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -17,7 +16,6 @@
 		C0A1F5D422A72ED70020F29D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A1F5D222A72ED70020F29D /* MainInterface.storyboard */; };
 		C0A1F5D822A72ED70020F29D /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0A1F5CB22A72ED70020F29D /* Widget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0A1F5DD22A730310020F29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A1F5DC22A730310020F29D /* Assets.xcassets */; };
-		C0C3FA3F22D8E171005AB05B /* WStatusImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3FA3E22D8E171005AB05B /* WStatusImgView.swift */; };
 		C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */; };
 		C0CC27EB22A5FF4F00EDA13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */; };
 		C0CC27ED22A5FF4F00EDA13E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC27EC22A5FF4F00EDA13E /* ContentView.swift */; };
@@ -113,7 +111,6 @@
 		160842843B4C64838AF43B2B /* Pods-WH-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WH-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-WH-SwiftUI/Pods-WH-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WH-SwiftUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D47541C0AEDEE615E65B5D6 /* Pods-WH-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WH-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-WH-SwiftUI/Pods-WH-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
-		C0450EEA232B422A00DC9F52 /* ReloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
 		C074559022CA87B100EA4132 /* StatusImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImgView.swift; sourceTree = "<group>"; };
 		C09CA0B222A6014900B28214 /* Sticker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sticker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09CA0B422A6014A00B28214 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
@@ -124,7 +121,6 @@
 		C0A1F5D322A72ED70020F29D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C0A1F5D522A72ED70020F29D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0A1F5DC22A730310020F29D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C0C3FA3E22D8E171005AB05B /* WStatusImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WStatusImgView.swift; sourceTree = "<group>"; };
 		C0CC27E522A5FF4F00EDA13E /* WH-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WH-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -290,8 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				C0CC281022A6008B00EDA13E /* ContentView.swift */,
-				C0450EEA232B422A00DC9F52 /* ReloadButton.swift */,
-				C0C3FA3E22D8E171005AB05B /* WStatusImgView.swift */,
 				C0CC281222A6008B00EDA13E /* HostingController.swift */,
 				C0CC281422A6008B00EDA13E /* ExtensionDelegate.swift */,
 				C0CC281622A6008B00EDA13E /* NotificationController.swift */,
@@ -570,10 +564,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0450EEB232B422A00DC9F52 /* ReloadButton.swift in Sources */,
 				C0CC281322A6008B00EDA13E /* HostingController.swift in Sources */,
 				C0CC281122A6008B00EDA13E /* ContentView.swift in Sources */,
-				C0C3FA3F22D8E171005AB05B /* WStatusImgView.swift in Sources */,
 				C0CC281722A6008B00EDA13E /* NotificationController.swift in Sources */,
 				C0CC281522A6008B00EDA13E /* ExtensionDelegate.swift in Sources */,
 				C0CC281922A6008B00EDA13E /* NotificationView.swift in Sources */,
