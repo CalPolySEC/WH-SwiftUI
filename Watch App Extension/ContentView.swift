@@ -15,6 +15,7 @@ struct ContentView : View {
                 WStatusImgView()
                     .scaledToFit()
             }
+            ReloadButton()
             .padding()
             Spacer()
         }
