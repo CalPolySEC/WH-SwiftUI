@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		407A7BFB5EBB59B627B3C02C /* libPods-WH-SwiftUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */; };
+		C0450EED232C4B9500DC9F52 /* EventTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0450EEC232C4B9500DC9F52 /* EventTile.swift */; };
 		C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C074559022CA87B100EA4132 /* StatusImgView.swift */; };
 		C09CA0B522A6014A00B28214 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09CA0B422A6014A00B28214 /* Stickers.xcassets */; };
 		C09CA0B922A6014A00B28214 /* Sticker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C09CA0B222A6014900B28214 /* Sticker Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -111,6 +112,7 @@
 		160842843B4C64838AF43B2B /* Pods-WH-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WH-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-WH-SwiftUI/Pods-WH-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WH-SwiftUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D47541C0AEDEE615E65B5D6 /* Pods-WH-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WH-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-WH-SwiftUI/Pods-WH-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		C0450EEC232C4B9500DC9F52 /* EventTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTile.swift; sourceTree = "<group>"; };
 		C074559022CA87B100EA4132 /* StatusImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImgView.swift; sourceTree = "<group>"; };
 		C09CA0B222A6014900B28214 /* Sticker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sticker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09CA0B422A6014A00B28214 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				C074559022CA87B100EA4132 /* StatusImgView.swift */,
 				C0CC27EC22A5FF4F00EDA13E /* ContentView.swift */,
 				C0D2C26A22EF609300D79E99 /* SpotifyView.swift */,
+				C0450EEC232C4B9500DC9F52 /* EventTile.swift */,
 				C0CC27EE22A5FF5100EDA13E /* Assets.xcassets */,
 				C0D2C26822EF5F9400D79E99 /* FiraCode-Retina.otf */,
 				C0CC27F322A5FF5100EDA13E /* LaunchScreen.storyboard */,
@@ -552,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0450EED232C4B9500DC9F52 /* EventTile.swift in Sources */,
 				C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */,
 				C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */,
 				C0D2C26B22EF609300D79E99 /* SpotifyView.swift in Sources */,
@@ -833,6 +837,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Socket.IO-Client-Swift\"",
+					"-l\"Starscream\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_UIKITFORMAC = YES;
@@ -859,6 +869,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Socket.IO-Client-Swift\"",
+					"-l\"Starscream\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_UIKITFORMAC = YES;

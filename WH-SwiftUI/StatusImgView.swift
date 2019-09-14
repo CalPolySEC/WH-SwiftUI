@@ -11,8 +11,12 @@ import SwiftUI
 struct StatusImgView : View {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var body: some View {
-        Image(delegate.status)
-            .resizable()
+        VStack {
+            Image(delegate.status)
+                .resizable()
+                .aspectRatio(3.8, contentMode: .fit)
+        }
+        .frame(height: 50)
     }
 }
 

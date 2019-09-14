@@ -17,14 +17,24 @@ struct ContentView : View {
                 .font(.custom("FiraCode-Retina", size: 42))
             HStack {
                 StatusImgView()
+                    .frame(height: 50)
                     .scaledToFit()
             }
-            .padding()
+            VStack {
+                HStack {
+                    Text("Upcoming Events:")
+                        .fontWeight(.heavy)
+                        .font(.custom("Helvetica", size: 18))
+                    Spacer()
+                }
+                .padding(3)
+                EventTile()
+            }
+            Spacer()
             Toggle(isOn: $ssidBoolLoc) {
                 Text("SecLab")
             }
             .padding()
-            Spacer()
             if (delegate.ssidBool || ssidBoolLoc) {
                 SpotifyView()
             }

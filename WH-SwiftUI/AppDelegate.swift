@@ -106,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else {
                 self.ssidBool = false
-                self.npData = ["artist": "Sick Individuals", "track": "Right Next to You (feat. Kepler)", "uri": "https://open.spotify.com/track/6OVDJvTvaBRHjpS5f5aNBL?si=NZGnSVAkSo-0cwSAQKbCnA", "img": "https://i.scdn.co/image/b16a8403c3a12cdb27fa758bad43aa23df79abad"]
+                self.npData = ["artist": "Collective Soul", "track": "Shine", "uri": "https://open.spotify.com/track/6emdJW80SbDBMuHci8PJJn?si=LGRrbNOTQqiNCP0Y_tXJzQ", "img": "https://i.scdn.co/image/c0e5f1d7db3c50c4e2dd63e9bbbb76353a058777"]
             }
         }
         return netType
