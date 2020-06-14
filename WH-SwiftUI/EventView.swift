@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EventTile: View {
+struct EventView: View {
     var body: some View {
         HStack {
             Image("nil")
@@ -34,8 +34,8 @@ struct EventTile: View {
     }
 }
 
-struct EventTile_Previews: PreviewProvider {
+struct EventView_Previews: PreviewProvider {
     static var previews: some View {
-        EventTile()
+        EventView()
     }
 }

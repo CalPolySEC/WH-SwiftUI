@@ -13,10 +13,15 @@ struct SpotifyView: View {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var body: some View {
         HStack {
-            URLImage(URL(string: delegate.npData["img"]!)!, placeholder: Image("nil").resizable())
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100, alignment: .center)
+            URLImage(URL(string: self.delegate.npData["img"]!)!,
+            processors: [ Resize(size: CGSize(width: 100.0, height: 100.0), scale: UIScreen.main.scale) ],
+            content:  {
+                $0.image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .clipped()
+            })
+                .frame(width: 100.0, height: 100.0)
             VStack {
                 HStack {
                     Text(delegate.npData["track"]!)

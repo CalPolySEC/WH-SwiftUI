@@ -20,13 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var ssidBool: Bool!
     var window: UIWindow?
     var status: String!
+    var vdData: Array<Dictionary<String, String>>!
+    var count: Int!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        getJsonFromUrl()
-        let _ = checkSpotifyLoad()
+        npData = ["artist":"nil", "track":"nil", "uri":"nil", "img":"nil"]
+        spotBotData()
+        getJsonFromUrlSt()
+        getJsonFromUrlVd()
         var i = 0;
         while (status == nil && i <= 10) {
+            sleep(1)
+            i += 1
+        }
+        i = 0
+        while (npData["artist"] == "nil" && i <= 1) {
+            print(npData["artist"])
             sleep(1)
             i += 1
         }
@@ -53,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: Custom Functions
     
-    func getJsonFromUrl() {
+    func getJsonFromUrlSt() {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
@@ -68,7 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
                 let jStatus = json["data"] as? Dictionary<String, Any>
                 let jStatus2 = jStatus?["status"] as? String ?? "nil"
-                print(jStatus2)
                 self.status = jStatus2
             } catch let error as NSError {
                 print(error)
@@ -76,52 +85,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }).resume()
     }
     
-    var manager:SocketManager!
-    var socket:SocketIOClient!
-    
-    func checkSpotifyLoad() -> String {
-        let netType = "Wifi"
-        if (netType == "Wifi") {
-            let ssid = getSSID() ?? "nope"
-            self.ssid = ssid
-            print(self.ssid!)
-            if (ssid == "SecurityLab-5G" || ssid == "SecurityLab" || ssid == "l33th4x:)") {
-                self.ssidBool = true
-                self.manager = SocketManager(socketURL: URL(string: "http://play.wh")!, config: [.log(true), .compress, .reconnects(true)])
-                self.socket = self.manager.socket(forNamespace: "/devices")
-                
-                self.socket.on(clientEvent: .connect) {data, ack in
-                    self.socket.emit("test", ["data": "Hello from iOS!"])
-                    self.socket.emit("get_nowplaying")
-                }
-                self.socket.on("nowplaying") { (data, ack) -> Void in
-                    let dataArray: Array = data as Array
-                    let dataDict: Dictionary = dataArray[0] as! Dictionary<String, Any>
-                    self.npData = (dataDict["data"] as! Dictionary<String, String>)
-                }
-                self.socket.on("refresh") {data, ack in
-                    self.socket.emit("get_nowplaying")
-                }
-                self.socket.connect()
+    func getJsonFromUrlVd() {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        
+        let session = URLSession.init(configuration: config)
+        
+        let url = URL(string: "https://thewhitehat.club/api/v1/videos")
+        session.dataTask(with:url!, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                let jStatus = json["data"] as? Dictionary<String, Any>
+                let jStatus2 = jStatus?["videos"] as? Array<Dictionary<String, String>>
+                self.vdData = jStatus2
+                let jsondata = json["data"] as? Dictionary<String, Int>
+                let jsoncount = jsondata?["count"]!
+                self.count = jsoncount
+            } catch let error as NSError {
+                print(error)
             }
-            else {
-                self.ssidBool = false
-                self.npData = ["artist": "Collective Soul", "track": "Shine", "uri": "https://open.spotify.com/track/6emdJW80SbDBMuHci8PJJn?si=LGRrbNOTQqiNCP0Y_tXJzQ", "img": "https://i.scdn.co/image/c0e5f1d7db3c50c4e2dd63e9bbbb76353a058777"]
-            }
-        }
-        return netType
+        }).resume()
     }
     
-    func getSSID() -> String? {
-        var ssid: String?
-        if let interfaces = CNCopySupportedInterfaces() as NSArray? {
-            for interface in interfaces {
-                if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
-                    ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
-                    break
-                }
+//    var manager:SocketManager!
+//    var socket:SocketIOClient!
+//
+//    func spotBotSock() {
+//        self.manager = SocketManager(socketURL: URL(string: "http://10.13.37.7")!, config: [.log(true), .compress, .reconnects(true)])
+//        self.socket = self.manager.socket(forNamespace: "/devices")
+//
+//        self.socket.on(clientEvent: .connect) {data, ack in
+//            self.socket.emit("test", ["data": "Hello from iOS!"])
+//            self.socket.emit("get_nowplaying")
+//        }
+//        self.socket.on("nowplaying") { (data, ack) -> Void in
+//            let dataArray: Array = data as Array
+//            let dataDict: Dictionary = dataArray[0] as! Dictionary<String, Any>
+//            self.npData = (dataDict["data"] as! Dictionary<String, String>)
+//        }
+//        self.socket.on("refresh") {data, ack in
+//            self.socket.emit("get_nowplaying")
+//        }
+//        self.socket.connect()
+//
+//    }
+    
+    func spotBotData() {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+
+        let session = URLSession.init(configuration: config)
+
+        let url = URL(string: "http://10.13.37.7/api/v1/info")
+        session.dataTask(with:url!, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else { return }
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                print(json)
+                let jStatus = json as? Dictionary<String, Any>
+                let artist = jStatus?["artist"] as? String ?? "nil"
+                let track = jStatus?["track"] as? String ?? "nil"
+                let img = jStatus?["img"] as? String ?? "nil"
+                let uri = jStatus?["uri"] as? String ?? "nil"
+                print(uri)
+                self.npData = ["artist":artist, "track":track, "uri":uri, "img":img]
+            } catch let error as NSError {
+                print(error)
             }
-        }
-        return ssid
+        }).resume()
     }
 }

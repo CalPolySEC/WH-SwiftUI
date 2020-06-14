@@ -10,10 +10,9 @@ import SwiftUI
 
 struct ContentView : View {
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    @State var ssidBoolLoc = true
     var body: some View {
         VStack {
-            Text("White Hat")
+            Text("WhiteHat")
                 .font(.custom("FiraCode-Retina", size: 42))
             HStack {
                 StatusImgView()
@@ -22,20 +21,25 @@ struct ContentView : View {
             }
             VStack {
                 HStack {
-                    Text("Upcoming Events:")
+                    Text("Videos:")
                         .fontWeight(.heavy)
                         .font(.custom("Helvetica", size: 18))
+                        .padding(5)
                     Spacer()
                 }
-                .padding(3)
-                EventTile()
+                List{
+                    ForEach(delegate.vdData, id: \.self) { vid in
+                        VideoView(video: vid)
+                            .listRowInsets(EdgeInsets(top: 2, leading: 5, bottom: 3, trailing: 0))
+                    }
+                }
+                Spacer()
             }
-            Spacer()
-            Toggle(isOn: $ssidBoolLoc) {
-                Text("SecLab")
+            if delegate.npData["track"] == "nil" {
+                Spacer()
             }
-            .padding()
-            if (delegate.ssidBool || ssidBoolLoc) {
+            else {
+                Spacer()
                 SpotifyView()
             }
         }
