@@ -1,6 +1,0 @@
-module Pods_WH_SwiftUI {
-  umbrella header "Pods-WH-SwiftUI-umbrella.h"
-
-  export *
-  module * { export * }
-}

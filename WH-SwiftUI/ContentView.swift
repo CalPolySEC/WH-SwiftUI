@@ -11,37 +11,36 @@ import SwiftUI
 struct ContentView : View {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var body: some View {
-        VStack {
-            Text("WhiteHat")
-                .font(.custom("FiraCode-Retina", size: 42))
-            HStack {
-                StatusImgView()
-                    .frame(height: 50)
-                    .scaledToFit()
-            }
-            VStack {
+        NavigationView {
+            List {
+                
                 HStack {
-                    Text("Videos:")
-                        .fontWeight(.heavy)
-                        .font(.custom("Helvetica", size: 18))
-                        .padding(5)
+                    Spacer()
+                    StatusImgView()
+                        .frame(height: 50)
+                        .scaledToFit()
                     Spacer()
                 }
-                List{
-                    ForEach(delegate.vdData, id: \.self) { vid in
-                        VideoView(video: vid)
-                            .listRowInsets(EdgeInsets(top: 2, leading: 5, bottom: 3, trailing: 0))
-                    }
+                
+                if delegate.npData["track"] != "nil" {
+                    SpotifyView()
                 }
-                Spacer()
+                
+                VideoScrollView().listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 0 ))
+                NavigationLink(destination: VideoListView()) {
+                    Text("All Videos")
+                }
+                
+                EventScrollView().listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 0 ))
+                NavigationLink(destination: EventListView()) {
+                    Text("All Events")
+                }
+                
+                NavigationLink(destination: EmailView()) {
+                    Text("Join Mailing List")
+                }
             }
-            if delegate.npData["track"] == "nil" {
-                Spacer()
-            }
-            else {
-                Spacer()
-                SpotifyView()
-            }
+            .navigationBarTitle(Text("White Hat"))
         }
     }
 }

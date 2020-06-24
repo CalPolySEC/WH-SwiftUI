@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		407A7BFB5EBB59B627B3C02C /* libPods-WH-SwiftUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */; };
 		C028459B24943C16006FD2A3 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028459A24943C16006FD2A3 /* VideoView.swift */; };
-		C0450EED232C4B9500DC9F52 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0450EEC232C4B9500DC9F52 /* EventView.swift */; };
+		C0515E8924A195F3005D6A1F /* WH_App_ClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0515E8824A195F3005D6A1F /* WH_App_ClipApp.swift */; };
+		C0515E8B24A195F3005D6A1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0515E8A24A195F3005D6A1F /* ContentView.swift */; };
+		C0515E9024A195F4005D6A1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0515E8F24A195F4005D6A1F /* Preview Assets.xcassets */; };
+		C0515E9524A195F4005D6A1F /* WH App Clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = C0515E8624A195F3005D6A1F /* WH App Clip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C074559022CA87B100EA4132 /* StatusImgView.swift */; };
+		C085F3C1249F417D00424269 /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3C0249F417D00424269 /* VideoDetailView.swift */; };
+		C085F3C5249F5EF600424269 /* VideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3C4249F5EF600424269 /* VideoScrollView.swift */; };
+		C085F3C7249F61BD00424269 /* VideoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3C6249F61BD00424269 /* VideoScroll.swift */; };
+		C085F3CC249F631900424269 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3CB249F631900424269 /* VideoListView.swift */; };
 		C09CA0B522A6014A00B28214 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09CA0B422A6014A00B28214 /* Stickers.xcassets */; };
 		C09CA0B922A6014A00B28214 /* Sticker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C09CA0B222A6014900B28214 /* Sticker Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0A1F5CE22A72ED70020F29D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A1F5CD22A72ED70020F29D /* NotificationCenter.framework */; };
@@ -38,10 +44,26 @@
 		C0CC282522A6008B00EDA13E /* Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C0CC27FF22A6008900EDA13E /* Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0D2C26922EF5F9400D79E99 /* FiraCode-Retina.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0D2C26822EF5F9400D79E99 /* FiraCode-Retina.otf */; };
 		C0D2C26B22EF609300D79E99 /* SpotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D2C26A22EF609300D79E99 /* SpotifyView.swift */; };
+		C0F5E41C24A2B8BC004E7CCA /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E41B24A2B8BC004E7CCA /* EmailView.swift */; };
+		C0F5E41D24A2BA18004E7CCA /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E41B24A2B8BC004E7CCA /* EmailView.swift */; };
+		C0F5E42024A2BAE6004E7CCA /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F5E41F24A2BAE6004E7CCA /* Shared.xcassets */; };
+		C0F5E42124A2BAE6004E7CCA /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F5E41F24A2BAE6004E7CCA /* Shared.xcassets */; };
+		C0F5E42924A2BE62004E7CCA /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42424A2BE62004E7CCA /* EventDetailView.swift */; };
+		C0F5E42A24A2BE62004E7CCA /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42524A2BE62004E7CCA /* EventView.swift */; };
+		C0F5E42B24A2BE62004E7CCA /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42624A2BE62004E7CCA /* EventListView.swift */; };
+		C0F5E42C24A2BE62004E7CCA /* EventScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */; };
+		C0F5E42E24A2CA4A004E7CCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42D24A2CA4A004E7CCA /* MapView.swift */; };
 		C0F87A9022F0B77C00C2C991 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C0F87A8F22F0B77C00C2C991 /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C0515E9324A195F4005D6A1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0CC27DD22A5FF4F00EDA13E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0515E8524A195F3005D6A1F;
+			remoteInfo = "WH App Clip";
+		};
 		C09CA0B722A6014A00B28214 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C0CC27DD22A5FF4F00EDA13E /* Project object */;
@@ -73,6 +95,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C0515E9624A195F4005D6A1F /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				C0515E9524A195F4005D6A1F /* WH App Clip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C09CA0BA22A6014A00B28214 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,12 +143,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		160842843B4C64838AF43B2B /* Pods-WH-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WH-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-WH-SwiftUI/Pods-WH-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
-		59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WH-SwiftUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D47541C0AEDEE615E65B5D6 /* Pods-WH-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WH-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-WH-SwiftUI/Pods-WH-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		C028459A24943C16006FD2A3 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
-		C0450EEC232C4B9500DC9F52 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		C0515E8624A195F3005D6A1F /* WH App Clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WH App Clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0515E8824A195F3005D6A1F /* WH_App_ClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WH_App_ClipApp.swift; sourceTree = "<group>"; };
+		C0515E8A24A195F3005D6A1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0515E8F24A195F4005D6A1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C0515E9124A195F4005D6A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0515E9224A195F4005D6A1F /* WH_App_Clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WH_App_Clip.entitlements; sourceTree = "<group>"; };
 		C074559022CA87B100EA4132 /* StatusImgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImgView.swift; sourceTree = "<group>"; };
+		C085F3C0249F417D00424269 /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
+		C085F3C4249F5EF600424269 /* VideoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoScrollView.swift; sourceTree = "<group>"; };
+		C085F3C6249F61BD00424269 /* VideoScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoScroll.swift; sourceTree = "<group>"; };
+		C085F3CB249F631900424269 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
 		C09CA0B222A6014900B28214 /* Sticker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sticker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09CA0B422A6014A00B28214 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		C09CA0B622A6014A00B28214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +190,13 @@
 		C0CC282222A6008B00EDA13E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		C0D2C26822EF5F9400D79E99 /* FiraCode-Retina.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Retina.otf"; sourceTree = "<group>"; };
 		C0D2C26A22EF609300D79E99 /* SpotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyView.swift; sourceTree = "<group>"; };
+		C0F5E41B24A2B8BC004E7CCA /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		C0F5E41F24A2BAE6004E7CCA /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
+		C0F5E42424A2BE62004E7CCA /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		C0F5E42524A2BE62004E7CCA /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		C0F5E42624A2BE62004E7CCA /* EventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScrollView.swift; sourceTree = "<group>"; };
+		C0F5E42D24A2CA4A004E7CCA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +208,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A4D34B89FBFC1FE471075AEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0515E8324A195F3005D6A1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -181,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0F87A9022F0B77C00C2C991 /* URLImage in Frameworks */,
-				407A7BFB5EBB59B627B3C02C /* libPods-WH-SwiftUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +247,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0515E8724A195F3005D6A1F /* WH App Clip */ = {
+			isa = PBXGroup;
+			children = (
+				C0515E8824A195F3005D6A1F /* WH_App_ClipApp.swift */,
+				C0515E8A24A195F3005D6A1F /* ContentView.swift */,
+				C0515E9124A195F4005D6A1F /* Info.plist */,
+				C0515E9224A195F4005D6A1F /* WH_App_Clip.entitlements */,
+				C0515E8E24A195F4005D6A1F /* Preview Content */,
+			);
+			path = "WH App Clip";
+			sourceTree = "<group>";
+		};
+		C0515E8E24A195F4005D6A1F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C0515E8F24A195F4005D6A1F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C085F3C8249F61FA00424269 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				C085F3C0249F417D00424269 /* VideoDetailView.swift */,
+				C028459A24943C16006FD2A3 /* VideoView.swift */,
+				C085F3C4249F5EF600424269 /* VideoScrollView.swift */,
+				C085F3C6249F61BD00424269 /* VideoScroll.swift */,
+				C085F3CB249F631900424269 /* VideoListView.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		C085F3C9249F623600424269 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */,
+				C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C085F3CA249F624D00424269 /* Misc Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				C074559022CA87B100EA4132 /* StatusImgView.swift */,
+				C0D2C26A22EF609300D79E99 /* SpotifyView.swift */,
+				C0F5E41B24A2B8BC004E7CCA /* EmailView.swift */,
+				C0F5E42D24A2CA4A004E7CCA /* MapView.swift */,
+			);
+			path = "Misc Supporting Views";
+			sourceTree = "<group>";
+		};
 		C09CA0B322A6014900B28214 /* Sticker Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				C0A1F5CD22A72ED70020F29D /* NotificationCenter.framework */,
-				59A0820B75DC0139247DAAAA /* libPods-WH-SwiftUI.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,9 +335,9 @@
 				C0CC280F22A6008B00EDA13E /* Watch App Extension */,
 				C09CA0B322A6014900B28214 /* Sticker Extension */,
 				C0A1F5CF22A72ED70020F29D /* Widget */,
+				C0515E8724A195F3005D6A1F /* WH App Clip */,
 				C0A1F5CC22A72ED70020F29D /* Frameworks */,
 				C0CC27E622A5FF4F00EDA13E /* Products */,
-				DF13302BDB407B91EDCF3595 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,6 +349,7 @@
 				C0CC280B22A6008B00EDA13E /* Watch App Extension.appex */,
 				C09CA0B222A6014900B28214 /* Sticker Extension.appex */,
 				C0A1F5CB22A72ED70020F29D /* Widget.appex */,
+				C0515E8624A195F3005D6A1F /* WH App Clip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,18 +358,17 @@
 			isa = PBXGroup;
 			children = (
 				C0CC27FC22A6000900EDA13E /* WH-SwiftUI.entitlements */,
-				C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */,
-				C028459A24943C16006FD2A3 /* VideoView.swift */,
-				C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */,
-				C074559022CA87B100EA4132 /* StatusImgView.swift */,
 				C0CC27EC22A5FF4F00EDA13E /* ContentView.swift */,
-				C0D2C26A22EF609300D79E99 /* SpotifyView.swift */,
-				C0450EEC232C4B9500DC9F52 /* EventView.swift */,
+				C0F5E42224A2BDFE004E7CCA /* Events */,
+				C085F3C8249F61FA00424269 /* Video */,
+				C085F3C9249F623600424269 /* Delegates */,
+				C085F3CA249F624D00424269 /* Misc Supporting Views */,
 				C0CC27EE22A5FF5100EDA13E /* Assets.xcassets */,
 				C0D2C26822EF5F9400D79E99 /* FiraCode-Retina.otf */,
 				C0CC27F322A5FF5100EDA13E /* LaunchScreen.storyboard */,
 				C0CC27F622A5FF5100EDA13E /* Info.plist */,
 				C0CC27F022A5FF5100EDA13E /* Preview Content */,
+				C0F5E41F24A2BAE6004E7CCA /* Shared.xcassets */,
 			);
 			path = "WH-SwiftUI";
 			sourceTree = "<group>";
@@ -313,18 +416,37 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DF13302BDB407B91EDCF3595 /* Pods */ = {
+		C0F5E42224A2BDFE004E7CCA /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				9D47541C0AEDEE615E65B5D6 /* Pods-WH-SwiftUI.debug.xcconfig */,
-				160842843B4C64838AF43B2B /* Pods-WH-SwiftUI.release.xcconfig */,
+				C0F5E42424A2BE62004E7CCA /* EventDetailView.swift */,
+				C0F5E42624A2BE62004E7CCA /* EventListView.swift */,
+				C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */,
+				C0F5E42524A2BE62004E7CCA /* EventView.swift */,
 			);
-			path = Pods;
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C0515E8524A195F3005D6A1F /* WH App Clip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0515E9924A195F4005D6A1F /* Build configuration list for PBXNativeTarget "WH App Clip" */;
+			buildPhases = (
+				C0515E8224A195F3005D6A1F /* Sources */,
+				C0515E8324A195F3005D6A1F /* Frameworks */,
+				C0515E8424A195F3005D6A1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WH App Clip";
+			productName = "WH App Clip";
+			productReference = C0515E8624A195F3005D6A1F /* WH App Clip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		C09CA0B122A6014900B28214 /* Sticker Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C09CA0BD22A6014A00B28214 /* Build configuration list for PBXNativeTarget "Sticker Extension" */;
@@ -362,12 +484,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0CC27F922A5FF5100EDA13E /* Build configuration list for PBXNativeTarget "WH-SwiftUI" */;
 			buildPhases = (
-				BDCDB9B583A88CC72459B8AC /* [CP] Check Pods Manifest.lock */,
 				C0CC27E122A5FF4F00EDA13E /* Sources */,
 				C0CC27E222A5FF4F00EDA13E /* Frameworks */,
 				C0CC27E322A5FF4F00EDA13E /* Resources */,
 				C0CC282D22A6008B00EDA13E /* Embed Watch Content */,
 				C09CA0BA22A6014A00B28214 /* Embed App Extensions */,
+				C0515E9624A195F4005D6A1F /* Embed App Clips */,
 			);
 			buildRules = (
 			);
@@ -375,6 +497,7 @@
 				C0CC282422A6008B00EDA13E /* PBXTargetDependency */,
 				C09CA0B822A6014A00B28214 /* PBXTargetDependency */,
 				C0A1F5D722A72ED70020F29D /* PBXTargetDependency */,
+				C0515E9424A195F4005D6A1F /* PBXTargetDependency */,
 			);
 			name = "WH-SwiftUI";
 			packageProductDependencies = (
@@ -425,10 +548,13 @@
 		C0CC27DD22A5FF4F00EDA13E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Stephen Parkinson";
 				TargetAttributes = {
+					C0515E8524A195F3005D6A1F = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					C09CA0B122A6014900B28214 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -463,15 +589,25 @@
 			projectRoot = "";
 			targets = (
 				C0CC27E422A5FF4F00EDA13E /* WH-SwiftUI */,
-				C0CC27FE22A6008900EDA13E /* Watch App */,
-				C0CC280A22A6008B00EDA13E /* Watch App Extension */,
+				C0515E8524A195F3005D6A1F /* WH App Clip */,
 				C09CA0B122A6014900B28214 /* Sticker Extension */,
 				C0A1F5CA22A72ED70020F29D /* Widget */,
+				C0CC27FE22A6008900EDA13E /* Watch App */,
+				C0CC280A22A6008B00EDA13E /* Watch App Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C0515E8424A195F3005D6A1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0515E9024A195F4005D6A1F /* Preview Assets.xcassets in Resources */,
+				C0F5E42124A2BAE6004E7CCA /* Shared.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C09CA0B022A6014900B28214 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0CC27F522A5FF5100EDA13E /* LaunchScreen.storyboard in Resources */,
+				C0F5E42024A2BAE6004E7CCA /* Shared.xcassets in Resources */,
 				C0CC27F222A5FF5100EDA13E /* Preview Assets.xcassets in Resources */,
 				C0CC27EF22A5FF5100EDA13E /* Assets.xcassets in Resources */,
 				C0D2C26922EF5F9400D79E99 /* FiraCode-Retina.otf in Resources */,
@@ -520,32 +657,17 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		BDCDB9B583A88CC72459B8AC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		C0515E8224A195F3005D6A1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WH-SwiftUI-checkManifestLockResult.txt",
+				C0515E8B24A195F3005D6A1F /* ContentView.swift in Sources */,
+				C0515E8924A195F3005D6A1F /* WH_App_ClipApp.swift in Sources */,
+				C0F5E41D24A2BA18004E7CCA /* EmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		C0A1F5C722A72ED70020F29D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,12 +680,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0450EED232C4B9500DC9F52 /* EventView.swift in Sources */,
 				C028459B24943C16006FD2A3 /* VideoView.swift in Sources */,
+				C0F5E42E24A2CA4A004E7CCA /* MapView.swift in Sources */,
 				C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */,
+				C085F3CC249F631900424269 /* VideoListView.swift in Sources */,
 				C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */,
+				C0F5E42924A2BE62004E7CCA /* EventDetailView.swift in Sources */,
+				C0F5E42B24A2BE62004E7CCA /* EventListView.swift in Sources */,
+				C0F5E41C24A2B8BC004E7CCA /* EmailView.swift in Sources */,
 				C0D2C26B22EF609300D79E99 /* SpotifyView.swift in Sources */,
+				C0F5E42A24A2BE62004E7CCA /* EventView.swift in Sources */,
+				C085F3C1249F417D00424269 /* VideoDetailView.swift in Sources */,
+				C0F5E42C24A2BE62004E7CCA /* EventScrollView.swift in Sources */,
 				C0CC27EB22A5FF4F00EDA13E /* SceneDelegate.swift in Sources */,
+				C085F3C7249F61BD00424269 /* VideoScroll.swift in Sources */,
+				C085F3C5249F5EF600424269 /* VideoScrollView.swift in Sources */,
 				C0CC27ED22A5FF4F00EDA13E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +715,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C0515E9424A195F4005D6A1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0515E8524A195F3005D6A1F /* WH App Clip */;
+			targetProxy = C0515E9324A195F4005D6A1F /* PBXContainerItemProxy */;
+		};
 		C09CA0B822A6014A00B28214 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -637,6 +773,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C0515E9724A195F4005D6A1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WH App Clip/WH_App_Clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WH App Clip/Preview Content\"";
+				DEVELOPMENT_TEAM = QR825BQSTL;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WH App Clip/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.3.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0515E9824A195F4005D6A1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WH App Clip/WH_App_Clip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WH App Clip/Preview Content\"";
+				DEVELOPMENT_TEAM = QR825BQSTL;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WH App Clip/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.3.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C09CA0BB22A6014A00B28214 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -644,7 +828,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = "Sticker Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI.Sticker-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,7 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = "Sticker Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI.Sticker-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -735,6 +919,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -795,6 +980,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -825,11 +1011,11 @@
 		};
 		C0CC27FA22A5FF5100EDA13E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D47541C0AEDEE615E65B5D6 /* Pods-WH-SwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "WH-SwiftUI/WH-SwiftUI.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WH-SwiftUI/Preview\\ Content";
@@ -841,12 +1027,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3.2;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"Socket.IO-Client-Swift\"",
-					"-l\"Starscream\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_UIKITFORMAC = YES;
@@ -857,11 +1038,11 @@
 		};
 		C0CC27FB22A5FF5100EDA13E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 160842843B4C64838AF43B2B /* Pods-WH-SwiftUI.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "WH-SwiftUI/WH-SwiftUI.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WH-SwiftUI/Preview\\ Content";
@@ -980,6 +1161,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C0515E9924A195F4005D6A1F /* Build configuration list for PBXNativeTarget "WH App Clip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0515E9724A195F4005D6A1F /* Debug */,
+				C0515E9824A195F4005D6A1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C09CA0BD22A6014A00B28214 /* Build configuration list for PBXNativeTarget "Sticker Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
