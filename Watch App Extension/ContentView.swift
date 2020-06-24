@@ -7,17 +7,18 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct ContentView : View {
     
-    @State var reload: Bool = false
+    @State var reloaded: Bool = false
     @State var status: String = "nil"
     let delegate = WKExtension.shared().delegate as! ExtensionDelegate
     
     var body: some View {
         VStack {
             HStack {
-                if (reload) {
+                if (reloaded) {
                     Image(status)
                         .resizable()
                         .scaledToFit()
@@ -40,9 +41,23 @@ struct ContentView : View {
     }
     
     func reloadFunc() {
+        let watch = WKInterfaceDevice()
+        watch.play(.start)
+        let oldStat = status
+        status = "nil"
         getJsonFromUrl()
-        sleep(5)
-        self.reload = true
+        var i = 0;
+        while (status == "nil" && i < 10) {
+            sleep(1)
+            i += 1;
+        }
+        if (oldStat != status) {
+            watch.play(.success)
+        }
+        else {
+            watch.play(.stop)
+        }
+        self.reloaded = true
     }
     
     func getJsonFromUrl() {
