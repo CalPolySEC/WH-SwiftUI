@@ -26,9 +26,13 @@ struct VideoScroll: View {
             Text(video["title"]!)
                 .foregroundColor(.primary)
                 .font(.footnote)
+                .truncationMode(.tail)
+                .frame(width: 155, alignment: .leading)
             Text(video["speaker"]!)
                 .foregroundColor(.primary)
                 .font(.caption)
+                .truncationMode(.tail)
+                .frame(width: 155, alignment: .leading)
                 
         }
         .padding(.leading, 15)

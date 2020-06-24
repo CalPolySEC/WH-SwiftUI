@@ -8,11 +8,17 @@
 
 import SwiftUI
 import URLImage
+import CoreLocation
 
 struct EventDetailView: View {
     var event: Dictionary<String, String>
     var body: some View {
         VStack {
+            let lat = Double(event["latitude"]!)
+            let long = Double(event["longitude"]!)
+            MapView(coordinate: CLLocationCoordinate2D(latitude: lat!, longitude: long!), interaction: true)
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: 600)
             VStack {
                 HStack{
                     Text(event["time"]!)

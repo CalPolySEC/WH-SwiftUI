@@ -17,18 +17,20 @@ struct EventScrollView: View {
                 .padding(.leading, 15)
                 .padding(.top, 5)
             
-            List {
-                ForEach(0...9, id:\.self) { i in
-                    NavigationLink(
-                        destination: EventDetailView(
-                            event: self.delegate.evData[i]
-                        )
-                    ) {
-                        EventView(event: self.delegate.evData[i])
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .top, spacing: 0) {
+                    ForEach(0...4, id:\.self) { i in
+                        NavigationLink(
+                            destination: EventDetailView(
+                                event: self.delegate.evData[i]
+                            )
+                        ) {
+                            EventScroll(event: self.delegate.evData[i])
+                        }
                     }
                 }
             }
-            .frame(height: 185)
+            .frame(height: 195)
         }
     }
 }

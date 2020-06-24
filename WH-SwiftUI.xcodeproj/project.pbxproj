@@ -54,6 +54,7 @@
 		C0F5E42C24A2BE62004E7CCA /* EventScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */; };
 		C0F5E42E24A2CA4A004E7CCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42D24A2CA4A004E7CCA /* MapView.swift */; };
 		C0F87A9022F0B77C00C2C991 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C0F87A8F22F0B77C00C2C991 /* URLImage */; };
+		C0F89E6524A31966003689CA /* EventScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F89E6424A31966003689CA /* EventScroll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,7 @@
 		C0F5E42624A2BE62004E7CCA /* EventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScrollView.swift; sourceTree = "<group>"; };
 		C0F5E42D24A2CA4A004E7CCA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C0F89E6424A31966003689CA /* EventScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScroll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 				C0F5E42624A2BE62004E7CCA /* EventListView.swift */,
 				C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */,
 				C0F5E42524A2BE62004E7CCA /* EventView.swift */,
+				C0F89E6424A31966003689CA /* EventScroll.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				C085F3CC249F631900424269 /* VideoListView.swift in Sources */,
 				C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */,
 				C0F5E42924A2BE62004E7CCA /* EventDetailView.swift in Sources */,
+				C0F89E6524A31966003689CA /* EventScroll.swift in Sources */,
 				C0F5E42B24A2BE62004E7CCA /* EventListView.swift in Sources */,
 				C0F5E41C24A2B8BC004E7CCA /* EmailView.swift in Sources */,
 				C0D2C26B22EF609300D79E99 /* SpotifyView.swift in Sources */,
