@@ -11,7 +11,9 @@ import SwiftUI
 struct ContentView : View {
     @ObservedObject var vidNetworkManager = VideoNetworkManager()
     @ObservedObject var stNetworkManager = StatusNetworkManager()
+    @ObservedObject var ofNetworkManager = OfficerNetworkManager()
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    @State private var selectedView: Int? = 0
     var body: some View {
         NavigationView {
             List {
@@ -37,7 +39,7 @@ struct ContentView : View {
                 } else {
                     VideoScrollView(networkManager: vidNetworkManager).listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 0 ))
                 }
-                NavigationLink(destination: VideoListView(networkManager: vidNetworkManager)) {
+                NavigationLink(destination: VideoListView(networkManager: vidNetworkManager), tag: 1, selection: self.$selectedView) {
                     Text("All Videos")
                 }
                 
@@ -46,13 +48,40 @@ struct ContentView : View {
                     Text("All Events")
                 }
                 
+                if ofNetworkManager.loading {
+                    Text("Loading...")
+                } else {
+                    NavigationLink(
+                        destination: OfficerListView(networkManager: ofNetworkManager),
+                        label: {
+                            Text("Officers")
+                        })
+                }
+                
                 NavigationLink(destination: EmailView()) {
                     Text("Join Mailing List")
+                }
+            }
+            .onAppear{
+                if DeviceTypeAndOrientation.isiPad && DeviceTypeAndOrientation.isLandscape {
+                    self.selectedView = 1
+                } else {
+                    self.selectedView = 0
                 }
             }
             .navigationBarTitle(Text("White Hat"))
             .navigationViewStyle(StackNavigationViewStyle())
         }
+    }
+}
+
+enum DeviceTypeAndOrientation {
+    static var isiPad: Bool {
+        return UIView().traitCollection.horizontalSizeClass == .regular && UIView().traitCollection.verticalSizeClass == .regular
+    }
+
+    static var isLandscape: Bool {
+        return UIApplication.shared.windows.first?.windowScene?.interfaceOrientation.isLandscape ?? false
     }
 }
 

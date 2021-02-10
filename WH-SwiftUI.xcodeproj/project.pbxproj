@@ -14,6 +14,9 @@
 		C085F3C5249F5EF600424269 /* VideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3C4249F5EF600424269 /* VideoScrollView.swift */; };
 		C085F3C7249F61BD00424269 /* VideoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3C6249F61BD00424269 /* VideoScroll.swift */; };
 		C085F3CC249F631900424269 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085F3CB249F631900424269 /* VideoListView.swift */; };
+		C091EE0825D46D03000AC38A /* OfficerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C091EE0725D46D03000AC38A /* OfficerData.swift */; };
+		C091EE0B25D46F25000AC38A /* OfficersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C091EE0A25D46F25000AC38A /* OfficersListView.swift */; };
+		C091EE0D25D46F7D000AC38A /* OfficerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C091EE0C25D46F7D000AC38A /* OfficerView.swift */; };
 		C09CA0B522A6014A00B28214 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09CA0B422A6014A00B28214 /* Stickers.xcassets */; };
 		C09CA0B922A6014A00B28214 /* Sticker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C09CA0B222A6014900B28214 /* Sticker Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0B0B5F825D37C38003C8E74 /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B0B5F725D37C38003C8E74 /* VideoData.swift */; };
@@ -150,6 +153,9 @@
 		C08DCDFD25B1177800F33D1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08DCE0025B1177800F33D1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C08DCE0225B1177800F33D1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C091EE0725D46D03000AC38A /* OfficerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficerData.swift; sourceTree = "<group>"; };
+		C091EE0A25D46F25000AC38A /* OfficersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficersListView.swift; sourceTree = "<group>"; };
+		C091EE0C25D46F7D000AC38A /* OfficerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficerView.swift; sourceTree = "<group>"; };
 		C09CA0B222A6014900B28214 /* Sticker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sticker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09CA0B422A6014A00B28214 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		C09CA0B622A6014A00B28214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -277,8 +283,6 @@
 			children = (
 				C0CC27E822A5FF4F00EDA13E /* AppDelegate.swift */,
 				C0CC27EA22A5FF4F00EDA13E /* SceneDelegate.swift */,
-				C0B0B5F725D37C38003C8E74 /* VideoData.swift */,
-				C02ED82925D3B3C400EFEC8A /* StatusData.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -312,6 +316,25 @@
 				C08DCE0025B1177800F33D1E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C091EE0625D46CE0000AC38A /* API Data */ = {
+			isa = PBXGroup;
+			children = (
+				C0B0B5F725D37C38003C8E74 /* VideoData.swift */,
+				C02ED82925D3B3C400EFEC8A /* StatusData.swift */,
+				C091EE0725D46D03000AC38A /* OfficerData.swift */,
+			);
+			path = "API Data";
+			sourceTree = "<group>";
+		};
+		C091EE0925D46EE0000AC38A /* Officers */ = {
+			isa = PBXGroup;
+			children = (
+				C091EE0A25D46F25000AC38A /* OfficersListView.swift */,
+				C091EE0C25D46F7D000AC38A /* OfficerView.swift */,
+			);
+			path = Officers;
 			sourceTree = "<group>";
 		};
 		C09CA0B322A6014900B28214 /* Sticker Extension */ = {
@@ -366,6 +389,8 @@
 			children = (
 				C0CC27FC22A6000900EDA13E /* WH-SwiftUI.entitlements */,
 				C0CC27EC22A5FF4F00EDA13E /* ContentView.swift */,
+				C091EE0625D46CE0000AC38A /* API Data */,
+				C091EE0925D46EE0000AC38A /* Officers */,
 				C0F5E42224A2BDFE004E7CCA /* Events */,
 				C085F3C8249F61FA00424269 /* Video */,
 				C085F3C9249F623600424269 /* Misc */,
@@ -652,6 +677,7 @@
 				C0F5E42E24A2CA4A004E7CCA /* MapView.swift in Sources */,
 				C074559122CA87B100EA4132 /* StatusImgView.swift in Sources */,
 				C085F3CC249F631900424269 /* VideoListView.swift in Sources */,
+				C091EE0825D46D03000AC38A /* OfficerData.swift in Sources */,
 				C02ED82A25D3B3C400EFEC8A /* StatusData.swift in Sources */,
 				C0CC27E922A5FF4F00EDA13E /* AppDelegate.swift in Sources */,
 				C0F5E42924A2BE62004E7CCA /* EventDetailView.swift in Sources */,
@@ -662,9 +688,11 @@
 				C0F5E42A24A2BE62004E7CCA /* EventView.swift in Sources */,
 				C085F3C1249F417D00424269 /* VideoDetailView.swift in Sources */,
 				C0F5E42C24A2BE62004E7CCA /* EventScrollView.swift in Sources */,
+				C091EE0B25D46F25000AC38A /* OfficersListView.swift in Sources */,
 				C0CC27EB22A5FF4F00EDA13E /* SceneDelegate.swift in Sources */,
 				C085F3C7249F61BD00424269 /* VideoScroll.swift in Sources */,
 				C0B0B5F825D37C38003C8E74 /* VideoData.swift in Sources */,
+				C091EE0D25D46F7D000AC38A /* OfficerView.swift in Sources */,
 				C085F3C5249F5EF600424269 /* VideoScrollView.swift in Sources */,
 				C0CC27ED22A5FF4F00EDA13E /* ContentView.swift in Sources */,
 			);
@@ -744,7 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = "Sticker Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -761,7 +789,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = "Sticker Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -897,7 +925,7 @@
 				CODE_SIGN_ENTITLEMENTS = "WH-SwiftUI/WH-SwiftUI.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WH-SwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
@@ -926,7 +954,7 @@
 				CODE_SIGN_ENTITLEMENTS = "WH-SwiftUI/WH-SwiftUI.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WH-SwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
@@ -955,7 +983,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				ENABLE_PREVIEWS = YES;
@@ -981,7 +1009,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				ENABLE_PREVIEWS = YES;
@@ -1008,7 +1036,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				IBSC_MODULE = Watch_App_Extension;
 				INFOPLIST_FILE = "Watch App/Info.plist";
@@ -1029,7 +1057,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				IBSC_MODULE = Watch_App_Extension;
 				INFOPLIST_FILE = "Watch App/Info.plist";
@@ -1051,7 +1079,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WhiteHatWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = WhiteHatWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1077,7 +1105,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WhiteHatWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = WhiteHatWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
