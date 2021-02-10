@@ -10,11 +10,10 @@ import SwiftUI
 import URLImage
 
 struct VideoScroll: View {
-    var video: Dictionary<String, String>
-    let delegate = UIApplication.shared.delegate as! AppDelegate
+    var video: Video
     var body: some View {
         VStack(alignment: .leading) {
-            URLImage(URL(string: video["img"]!)!,
+            URLImage(URL(string: video.img)!,
                      processors: [ Resize(size: CGSize(width: 200.0, height: 200.0*0.5625), scale: UIScreen.main.scale) ],
             content:  {
                 $0.image
@@ -23,12 +22,12 @@ struct VideoScroll: View {
                     .cornerRadius(5)
             })
             .frame(width: 155, height: 155*0.5625)
-            Text(video["title"]!)
+            Text(video.title)
                 .foregroundColor(.primary)
                 .font(.footnote)
                 .truncationMode(.tail)
                 .frame(width: 155, alignment: .leading)
-            Text(video["speaker"]!)
+            Text(video.speaker)
                 .foregroundColor(.primary)
                 .font(.caption)
                 .truncationMode(.tail)

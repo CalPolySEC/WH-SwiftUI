@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct VideoScrollView: View {
-    let delegate = UIApplication.shared.delegate as! AppDelegate
+    @ObservedObject var networkManager: VideoNetworkManager
     var body: some View {
         VStack(alignment: .leading) {
             Text("Videos")
@@ -17,26 +17,18 @@ struct VideoScrollView: View {
                 .padding(.leading, 15)
                 .padding(.top, 5)
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(alignment: .top, spacing: 0) {
-                    ForEach(0...9, id:\.self) { i in
-                        NavigationLink(
-                            destination: VideoDetailView(
-                                video: self.delegate.vdData[i]
-                            )
-                        ) {
-                            VideoScroll(video: self.delegate.vdData[i])
+            if !networkManager.videos.videos.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: 0) {
+                        ForEach(0...9, id: \.self) { i in
+                            NavigationLink(destination: VideoDetailView(video: networkManager.videos.videos[i])) {
+                                VideoScroll(video: networkManager.videos.videos[i])
+                            }
                         }
                     }
                 }
+                .frame(height: 120)
             }
-            .frame(height: 120)
         }
-    }
-}
-
-struct VideoScroll_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoScrollView()
     }
 }

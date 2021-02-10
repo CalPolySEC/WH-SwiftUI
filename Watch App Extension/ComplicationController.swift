@@ -56,126 +56,90 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             myDelegate.emoji = "🚫"
         }
         
+        // text and gague setup
+        var centerTextProvider: CLKSimpleTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
+        var gaugeProvider: CLKSimpleGaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.red, fillFraction: 0.5)
+        let textOne = myDelegate.lab + " " + myDelegate.status
+        let textTwo = myDelegate.status!
+        if textTwo == "closed" {
+            centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
+            gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0)
+        }
+        else if textTwo == "coffee" {
+            centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
+            gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0.33)
+        }
+        else if textTwo == "fire" {
+            centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
+            gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0.66)
+        }
+        else if textTwo == "open" {
+            centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
+            gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 1)
+        }
+        else if textTwo == "nil" {
+            centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
+            gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.red, fillFraction: 0.5)
+        }
+        
         // Create the template and timeline entry.
-        //Graphic Bezel
+        // Graphic Bezel
         if complication.family == .graphicBezel {
-            let textTemplate = CLKComplicationTemplateGraphicBezelCircularText()
-            let textOne = myDelegate.lab + " " + myDelegate.status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
-            let openGSimple = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            let textTwo = myDelegate.status!
-            openGSimple.bottomTextProvider = CLKSimpleTextProvider(text: "lab")
-            if textTwo == "closed" {
-                openGSimple.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                openGSimple.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0)
-            }
-            else if textTwo == "coffee" {
-                openGSimple.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                openGSimple.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0.33)
-            }
-            else if textTwo == "fire" {
-                openGSimple.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                openGSimple.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0.66)
-            }
-            else if textTwo == "open" {
-                openGSimple.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                openGSimple.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 1)
-            }
-            else if textTwo == "nil" {
-                openGSimple.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                openGSimple.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.red, fillFraction: 0.5)
-            }
-            textTemplate.circularTemplate = openGSimple
+            let openGSimple = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gaugeProvider, bottomTextProvider: CLKSimpleTextProvider(text: "lab"), centerTextProvider: centerTextProvider)
+            let textTemplate = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: openGSimple, textProvider: CLKSimpleTextProvider(text: textOne))
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Graphic Corner
         if complication.family == .graphicCorner {
-            let textTemplate = CLKComplicationTemplateGraphicCornerStackText()
             let textOne = myDelegate.lab!
             let textTwo = myDelegate.status!
-            textTemplate.outerTextProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateGraphicCornerStackText(innerTextProvider: CLKSimpleTextProvider(text: textOne), outerTextProvider: CLKSimpleTextProvider(text: textTwo))
             textTemplate.outerTextProvider.tintColor = UIColor(red: 200/255, green: 30/255, blue: 60/255, alpha: 1)
-            textTemplate.innerTextProvider = CLKSimpleTextProvider(text: textOne)
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Graphic Circular
         if complication.family == .graphicCircular {
-            let textTemplate = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            let textOne = myDelegate.lab!
-            let textTwo = myDelegate.status!
-            textTemplate.bottomTextProvider = CLKSimpleTextProvider(text: textOne)
-            if textTwo == "closed" {
-                textTemplate.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                textTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0)
-            }
-            else if textTwo == "coffee" {
-                textTemplate.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                textTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0.33)
-            }
-            else if textTwo == "fire" {
-                textTemplate.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                textTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 0.66)
-            }
-            else if textTwo == "open" {
-                textTemplate.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                textTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColors: [UIColor.red,UIColor.brown,UIColor.orange,UIColor.green], gaugeColorLocations: [0,0.33,0.66,1], fillFraction: 1)
-            }
-            else if textTwo == "nil" {
-                textTemplate.centerTextProvider = CLKSimpleTextProvider(text: myDelegate.emoji)
-                textTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.red, fillFraction: 0.5)
-            }
+            let textTemplate = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: gaugeProvider, bottomTextProvider: CLKSimpleTextProvider(text: "lab"), centerTextProvider: centerTextProvider)
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Mod Small
         if complication.family == .modularSmall {
-            let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
-            let textTwo = myDelegate.emoji!
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateModularSmallSimpleText(textProvider: centerTextProvider)
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Util Large
         if complication.family == .utilitarianLarge {
-            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-            let textOne = myDelegate.lab + " " + myDelegate.status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
+            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: CLKSimpleTextProvider(text: textOne))
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Util Small
         if complication.family == .utilitarianSmall {
-            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            let textOne = myDelegate.lab + " " + myDelegate.status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKSimpleTextProvider(text: textOne))
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Util Small Flat
         if complication.family == .utilitarianSmallFlat {
-            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            let textOne = myDelegate.lab + " " + myDelegate.status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKSimpleTextProvider(text: textOne))
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //XL
         if complication.family == .extraLarge {
-            let textTemplate = CLKComplicationTemplateExtraLargeStackText()
             let textOne = myDelegate.lab!
             let textTwo = myDelegate.status!
-            textTemplate.line1TextProvider = CLKSimpleTextProvider(text: textOne)
-            textTemplate.line2TextProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateExtraLargeStackText(line1TextProvider: CLKSimpleTextProvider(text: textOne), line2TextProvider: CLKSimpleTextProvider(text: textTwo))
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         
         //Circular Small
         if complication.family == .circularSmall {
-            let textTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-            let textTwo = myDelegate.emoji!
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateCircularSmallSimpleText(textProvider: centerTextProvider)
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: textTemplate)
         }
         else {
@@ -201,84 +165,68 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         //Graphic Bezel
         if complication.family == .graphicBezel {
-            let textTemplate = CLKComplicationTemplateGraphicBezelCircularText()
             let textOne = lab + " " + status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
-            let openGSimple = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            openGSimple.bottomTextProvider = CLKSimpleTextProvider(text: lab)
-            openGSimple.centerTextProvider = CLKSimpleTextProvider(text: emoji)
-            openGSimple.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.purple, fillFraction: 0.5)
+            let openGSimple = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.purple, fillFraction: 0.5), bottomTextProvider: CLKSimpleTextProvider(text: lab), centerTextProvider: CLKSimpleTextProvider(text: emoji))
+            let textTemplate = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: openGSimple, textProvider: CLKSimpleTextProvider(text: textOne))
             textTemplate.circularTemplate = openGSimple
             handler(textTemplate)
         }
         
         //Graphic Corner
         if complication.family == .graphicCorner {
-            let textTemplate = CLKComplicationTemplateGraphicCornerStackText()
             let textOne = lab
             let textTwo = status
-            textTemplate.outerTextProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateGraphicCornerStackText(innerTextProvider: CLKSimpleTextProvider(text: textOne), outerTextProvider: CLKSimpleTextProvider(text: textTwo))
             textTemplate.outerTextProvider.tintColor = UIColor(red: 200/255, green: 30/255, blue: 60/255, alpha: 1)
-            textTemplate.innerTextProvider = CLKSimpleTextProvider(text: textOne)
             handler(textTemplate)
         }
         
         //Graphic Circular
         if complication.family == .graphicCircular {
-            let textTemplate = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText()
-            textTemplate.bottomTextProvider = CLKSimpleTextProvider(text: lab)
-            textTemplate.centerTextProvider = CLKSimpleTextProvider(text: emoji)
-            textTemplate.gaugeProvider = CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.purple, fillFraction: 0.5)
+            let textTemplate = CLKComplicationTemplateGraphicCircularOpenGaugeSimpleText(gaugeProvider: CLKSimpleGaugeProvider(style: CLKGaugeProviderStyle.ring, gaugeColor: UIColor.purple, fillFraction: 0.5), bottomTextProvider: CLKSimpleTextProvider(text: lab), centerTextProvider: CLKSimpleTextProvider(text: emoji))
             handler(textTemplate)
         }
         
         //Mod Small
         if complication.family == .modularSmall {
-            let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
             let textTwo = emoji
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateModularSmallSimpleText(textProvider: CLKSimpleTextProvider(text: textTwo))
             handler(textTemplate)
         }
         
         //Util Large
         if complication.family == .utilitarianLarge {
-            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
             let textOne = lab + " " + status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
+            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: CLKSimpleTextProvider(text: textOne))
             handler(textTemplate)
         }
         
         //Util Small
         if complication.family == .utilitarianSmall {
-            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
             let textOne = lab + " " + status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKSimpleTextProvider(text: textOne))
             handler(textTemplate)
         }
         
         //Util Small Flat
         if complication.family == .utilitarianSmallFlat {
-            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
             let textOne = lab + " " + status
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textOne)
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: CLKSimpleTextProvider(text: textOne))
             handler(textTemplate)
         }
         
         //XL
         if complication.family == .extraLarge {
-            let textTemplate = CLKComplicationTemplateExtraLargeStackText()
             let textOne = lab
             let textTwo = status
-            textTemplate.line1TextProvider = CLKSimpleTextProvider(text: textOne)
-            textTemplate.line2TextProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateExtraLargeStackText(line1TextProvider: CLKSimpleTextProvider(text: textOne), line2TextProvider: CLKSimpleTextProvider(text: textTwo))
             handler(textTemplate)
         }
         
         //Circular Small
         if complication.family == .circularSmall {
-            let textTemplate = CLKComplicationTemplateCircularSmallSimpleText()
             let textTwo = emoji
-            textTemplate.textProvider = CLKSimpleTextProvider(text: textTwo)
+            let textTemplate = CLKComplicationTemplateCircularSmallSimpleText(textProvider: CLKSimpleTextProvider(text: textTwo))
             handler(textTemplate)
         }
     }

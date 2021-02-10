@@ -18,7 +18,7 @@
     "version" : 1
   },
   "properties" : {
-    "duration" : 1,
+    "duration" : 60,
     "duration-type" : "fps",
     "repetitions" : 0
   }

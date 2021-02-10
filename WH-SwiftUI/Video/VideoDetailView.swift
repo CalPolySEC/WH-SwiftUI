@@ -10,14 +10,14 @@ import SwiftUI
 import URLImage
 
 struct VideoDetailView: View {
-    var video: Dictionary<String, String>
+    var video: Video
     var body: some View {
         VStack {
             Button(action: {
-                UIApplication.shared.open(URL(string: self.video["url"]!)!)
+                UIApplication.shared.open(URL(string: self.video.url)!)
             }) {
                 ZStack{
-                    URLImage(URL(string: video["img"]!)!,
+                    URLImage(URL(string: video.img)!,
                              processors: [ Resize(size: CGSize(width: 160.0, height: 90.0), scale: UIScreen.main.scale) ],
                     content:  {
                         $0.image
@@ -35,19 +35,19 @@ struct VideoDetailView: View {
             }
             VStack {
                 HStack{
-                    Text(video["speaker"]!)
+                    Text(video.speaker)
                         .font(.headline)
                         .padding(5)
                     Spacer()
                 }
                 HStack{
-                    Text(video["description"]!)
+                    Text(video.description)
                         .font(.body)
                         .padding(5)
                     Spacer()
                 }
             }
             Spacer()
-        }.navigationBarTitle(video["title"]!)
+        }.navigationBarTitle(video.title)
     }
 }

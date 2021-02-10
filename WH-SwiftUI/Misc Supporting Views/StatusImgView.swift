@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct StatusImgView : View {
-    let delegate = UIApplication.shared.delegate as! AppDelegate
+    var networkManager: StatusNetworkManager
     var body: some View {
         Button(action: {
             UIApplication.shared.open(URL(string: "http://thewhitehat.club")!)
         }) {
             VStack {
-                Image(delegate.status)
+                Image(networkManager.status.status)
                     .renderingMode(.original)
                     .resizable()
                     .aspectRatio(3.8, contentMode: .fit)
@@ -24,11 +24,3 @@ struct StatusImgView : View {
         }
     }
 }
-
-#if DEBUG
-struct StatusImgView_Previews : PreviewProvider {
-    static var previews: some View {
-        StatusImgView()
-    }
-}
-#endif
