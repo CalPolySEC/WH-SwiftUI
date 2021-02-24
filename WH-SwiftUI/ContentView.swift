@@ -70,7 +70,6 @@ struct ContentView : View {
                 }
             }
             .navigationBarTitle(Text("White Hat"))
-            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

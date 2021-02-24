@@ -18,15 +18,16 @@ struct VideoDetailView: View {
             }) {
                 ZStack{
                     URLImage(URL(string: video.img)!,
-                             processors: [ Resize(size: CGSize(width: 160.0, height: 90.0), scale: UIScreen.main.scale) ],
+                             processors: [ Resize(size: CGSize(width: 320.0, height: 180.0), scale: UIScreen.main.scale) ],
                     content:  {
                         $0.image
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .clipped()
+                            .cornerRadius(6.0)
                     })
-                        .frame(width: UIScreen.main.bounds.size.width, height: (0.5625*UIScreen.main.bounds.size.width))
+                        .frame(width: UIScreen.main.focusedView?.bounds.size.width ?? 320.0, height: (0.5625*(UIScreen.main.focusedView?.bounds.size.height ?? 320.0)))
                     Image(systemName: "play.circle.fill")
                         .font(.system(size: 56.0))
                         .aspectRatio(contentMode: .fill)
