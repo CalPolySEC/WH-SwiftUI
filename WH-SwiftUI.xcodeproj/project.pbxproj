@@ -54,7 +54,6 @@
 		C0F5E42B24A2BE62004E7CCA /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42624A2BE62004E7CCA /* EventListView.swift */; };
 		C0F5E42C24A2BE62004E7CCA /* EventScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42724A2BE62004E7CCA /* EventScrollView.swift */; };
 		C0F5E42E24A2CA4A004E7CCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5E42D24A2CA4A004E7CCA /* MapView.swift */; };
-		C0F87A9022F0B77C00C2C991 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C0F87A8F22F0B77C00C2C991 /* URLImage */; };
 		C0F89E6524A31966003689CA /* EventScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F89E6424A31966003689CA /* EventScroll.swift */; };
 /* End PBXBuildFile section */
 
@@ -241,7 +240,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F87A9022F0B77C00C2C991 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +554,6 @@
 			);
 			name = "WH-SwiftUI";
 			packageProductDependencies = (
-				C0F87A8F22F0B77C00C2C991 /* URLImage */,
 			);
 			productName = "WH-SwiftUI";
 			productReference = C0CC27E522A5FF4F00EDA13E /* WH-SwiftUI.app */;
@@ -621,7 +618,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Stephen Parkinson";
 				TargetAttributes = {
 					C01A891425E5CFD000297E4E = {
@@ -655,7 +652,6 @@
 			);
 			mainGroup = C0CC27DC22A5FF4F00EDA13E;
 			packageReferences = (
-				C0F87A8E22F0B77C00C2C991 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = C0CC27E622A5FF4F00EDA13E /* Products */;
 			projectDirPath = "";
@@ -886,10 +882,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = "Sticker Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI.Sticker-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -903,10 +899,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = "Sticker Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.smpark.WH-SwiftUI.Sticker-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1039,13 +1035,13 @@
 				CODE_SIGN_ENTITLEMENTS = "WH-SwiftUI/WH-SwiftUI.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WH-SwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "WH-SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1068,13 +1064,13 @@
 				CODE_SIGN_ENTITLEMENTS = "WH-SwiftUI/WH-SwiftUI.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WH-SwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "WH-SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1097,7 +1093,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				ENABLE_PREVIEWS = YES;
@@ -1114,7 +1110,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1123,7 +1119,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Watch App Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				ENABLE_PREVIEWS = YES;
@@ -1140,7 +1136,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1150,7 +1146,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				IBSC_MODULE = Watch_App_Extension;
 				INFOPLIST_FILE = "Watch App/Info.plist";
@@ -1161,7 +1157,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1171,7 +1167,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				IBSC_MODULE = Watch_App_Extension;
 				INFOPLIST_FILE = "Watch App/Info.plist";
@@ -1182,7 +1178,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1193,10 +1189,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WhiteHatWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = WhiteHatWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1219,10 +1215,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WhiteHatWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QR825BQSTL;
 				INFOPLIST_FILE = WhiteHatWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1305,25 +1301,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C0F87A8E22F0B77C00C2C991 /* XCRemoteSwiftPackageReference "url-image" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C0F87A8F22F0B77C00C2C991 /* URLImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C0F87A8E22F0B77C00C2C991 /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0CC27DD22A5FF4F00EDA13E /* Project object */;
 }

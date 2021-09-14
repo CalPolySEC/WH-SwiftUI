@@ -16,6 +16,10 @@ struct VideoListView: View {
                 VideoView(video: vid)
                     .listRowInsets(EdgeInsets(top: 2, leading: 5, bottom: 3, trailing: 0))
             }
-        }.navigationBarTitle("All Videos")
+        }
+        .refreshable {
+            networkManager.loadData()
+        }
+        .navigationBarTitle("All Videos")
     }
 }

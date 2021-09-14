@@ -7,21 +7,22 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct VideoScroll: View {
     var video: Video
     var body: some View {
         VStack(alignment: .leading) {
-            URLImage(URL(string: video.img)!,
-                     processors: [ Resize(size: CGSize(width: 200.0, height: 200.0*0.5625), scale: UIScreen.main.scale) ],
-            content:  {
-                $0.image
+            AsyncImage(url: URL(string: video.img)!) { image in
+                image
                     .renderingMode(.original)
                     .resizable()
-                    .cornerRadius(5)
-            })
-            .frame(width: 155, height: 155*0.5625)
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                Color.gray
+                    .opacity(0.2)
+            }
+                .frame(width: 155, height: 155*0.5625)
+                .mask(RoundedRectangle(cornerRadius: 6.0))
             Text(video.title)
                 .foregroundColor(.primary)
                 .font(.footnote)
@@ -32,7 +33,6 @@ struct VideoScroll: View {
                 .font(.caption)
                 .truncationMode(.tail)
                 .frame(width: 155, alignment: .leading)
-                
         }
         .padding(.leading, 15)
 

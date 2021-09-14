@@ -9,18 +9,31 @@
 import SwiftUI
 
 struct StatusImgView : View {
-    var networkManager: StatusNetworkManager
+    @ObservedObject var networkManager: StatusNetworkManager
     var body: some View {
         Button(action: {
-            UIApplication.shared.open(URL(string: "http://thewhitehat.club")!)
+            UIApplication.shared.open(URL(string: "https://cpsecurity.club")!)
         }) {
-            VStack {
-                Image(networkManager.status.status)
-                    .renderingMode(.original)
-                    .resizable()
-                    .aspectRatio(3.8, contentMode: .fit)
+            if networkManager.loading {
+                Image(systemName: "hourglass")
+            } else {
+                Image(systemName: StatusToSFSymbol(status: networkManager.status.status))
             }
-            .frame(height: 50)
+        }
+    }
+    
+    func StatusToSFSymbol(status: String) -> String {
+        switch status {
+        case "closed":
+            return "lock.fill"
+        case "open":
+            return "lock.open.fill"
+        case "fire":
+            return "flame"
+        case "coffee":
+            return "takeoutbag.and.cup.and.straw"
+        default:
+            return "facemask.fill"
         }
     }
 }

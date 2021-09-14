@@ -61,7 +61,7 @@ struct Provider: TimelineProvider {
         
         let session = URLSession.init(configuration: config)
         
-        let url = URL(string: "https://thewhitehat.club/api/v1/status")
+        let url = URL(string: "https://cpsecurity.club/api/v1/status")
         session.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
             
@@ -100,7 +100,7 @@ struct WhiteHatWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WhiteHatWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("White Hat")
-        .description("White Hat lab status widget.")
+        .configurationDisplayName("CPSEC")
+        .description("CPSEC lab status widget.")
     }
 }

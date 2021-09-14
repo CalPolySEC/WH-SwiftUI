@@ -18,18 +18,6 @@ struct ContentView : View {
         NavigationView {
             List {
                 
-                if stNetworkManager.loading {
-                    Text("Loading...")
-                } else {
-                    HStack {
-                        Spacer()
-                        StatusImgView(networkManager: stNetworkManager)
-                            .frame(height: 50)
-                            .scaledToFit()
-                        Spacer()
-                    }
-                }
-                
                 if delegate.npData["track"] != "nil" {
                     SpotifyView()
                 }
@@ -69,7 +57,11 @@ struct ContentView : View {
                     self.selectedView = 0
                 }
             }
-            .navigationBarTitle(Text("White Hat"))
+            .navigationBarTitle(Text("CPSEC"))
+            .navigationBarItems(trailing:
+                StatusImgView(networkManager: stNetworkManager)
+                    .imageScale(.large)
+            )
         }
     }
 }

@@ -67,7 +67,7 @@ struct ContentView : View {
         
         let session = URLSession.init(configuration: config)
         
-        let url = URL(string: "https://thewhitehat.club/api/v1/status")
+        let url = URL(string: "https://cpsecurity.club/api/v1/status")
         session.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
             

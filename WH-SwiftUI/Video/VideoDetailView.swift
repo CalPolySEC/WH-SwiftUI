@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct VideoDetailView: View {
     var video: Video
@@ -17,17 +16,17 @@ struct VideoDetailView: View {
                 UIApplication.shared.open(URL(string: self.video.url)!)
             }) {
                 ZStack{
-                    URLImage(URL(string: video.img)!,
-                             processors: [ Resize(size: CGSize(width: 320.0, height: 180.0), scale: UIScreen.main.scale) ],
-                    content:  {
-                        $0.image
+                    AsyncImage(url: URL(string: self.video.img)!) { image in
+                        image
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .clipped()
-                            .cornerRadius(6.0)
-                    })
-                        .frame(width: UIScreen.main.focusedView?.bounds.size.width ?? 320.0, height: (0.5625*(UIScreen.main.focusedView?.bounds.size.height ?? 320.0)))
+                    } placeholder: {
+                        Color.gray
+                            .opacity(0.2)
+                    }
+                    .frame(width: UIScreen.main.focusedView?.bounds.size.width ?? 320.0, height: (0.5625*(UIScreen.main.focusedView?.bounds.size.height ?? 320.0)))
+                    .mask(RoundedRectangle(cornerRadius: 6.0))
                     Image(systemName: "play.circle.fill")
                         .font(.system(size: 56.0))
                         .aspectRatio(contentMode: .fill)

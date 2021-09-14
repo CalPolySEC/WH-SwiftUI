@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct EventView: View {
     var event: Dictionary<String, String>
@@ -23,7 +22,6 @@ struct EventView: View {
             Text(event["location"]!)
                 .foregroundColor(.primary)
                 .font(.caption)
-                
         }
         .padding(.leading, 15)
     }

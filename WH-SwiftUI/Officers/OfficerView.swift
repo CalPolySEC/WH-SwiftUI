@@ -6,23 +6,22 @@
 //  Copyright © 2021 Stephen Parkinson. All rights reserved.
 //
 
-import URLImage
 import SwiftUI
 
 struct OfficerView: View {
     var officer: Officer
     var body: some View {
         HStack {
-            URLImage(URL(string: "https://thewhitehat.club/officers-" + officer.image)!,
-                     processors: [ Resize(size: CGSize(width: 75.0, height: 75.0), scale: UIScreen.main.scale) ],
-            content:  {
-                $0.image
+            AsyncImage(url: URL(string: "https://cpsecurity.club/officers-" + officer.image)!) { image in
+                image
+                    .renderingMode(.original)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .clipped()
-                    .cornerRadius(6.0)
-            })
-                .frame(width: 75.0, height: 75.0)
+            } placeholder: {
+                Color.gray
+                    .opacity(0.2)
+            }
+            .frame(width: 75.0, height: 75.0)
+            .mask(RoundedRectangle(cornerRadius: 6.0))
             VStack {
                 Spacer()
                 HStack {

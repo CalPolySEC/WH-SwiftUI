@@ -7,21 +7,21 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct SpotifyView: View {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var body: some View {
         HStack {
-            URLImage(URL(string: self.delegate.npData["img"]!)!,
-            processors: [ Resize(size: CGSize(width: 100.0, height: 100.0), scale: UIScreen.main.scale) ],
-            content:  {
-                $0.image
+            AsyncImage(url: URL(string: self.delegate.npData["img"]!)!) { image in
+                image
+                    .renderingMode(.original)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .clipped()
-            })
-                .frame(width: 100.0, height: 100.0)
+            } placeholder: {
+                Color.gray
+                    .opacity(0.2)
+            }
+            .frame(width: 100.0, height: 100.0)
+            .mask(RoundedRectangle(cornerRadius: 3.0))
             VStack {
                 HStack {
                     Text(delegate.npData["track"]!)

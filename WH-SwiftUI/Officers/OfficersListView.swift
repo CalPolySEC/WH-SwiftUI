@@ -14,7 +14,11 @@ struct OfficerListView: View {
         List(networkManager.officers.positions, id: \.self) { position in
             OfficerView(officer: networkManager.officers.officers[position] ?? Officer(image: "nil", name: "nil", position: "nil"))
                 .listRowInsets(EdgeInsets(top: 2, leading: 5, bottom: 3, trailing: 0))
-        }.navigationBarTitle("Officers")
+        }
+        .refreshable {
+            networkManager.loadData()
+        }
+        .navigationBarTitle("Officers")
     }
 }
 

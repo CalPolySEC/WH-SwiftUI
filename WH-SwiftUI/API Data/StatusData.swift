@@ -28,7 +28,7 @@ class StatusNetworkManager: ObservableObject {
     }
     
     private func loadData() {
-        guard let url = URL(string: "https://thewhitehat.club/api/v1/status") else { return }
+        guard let url = URL(string: "https://cpsecurity.club/api/v1/status") else { return }
         URLSession.shared.dataTask(with: url){ (data, _, _) in
           guard let data = data else { return }
             do {

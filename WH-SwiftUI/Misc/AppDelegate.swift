@@ -21,22 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         npData = ["artist":"nil", "track":"nil", "uri":"nil", "img":"nil"]
         evData = [
-            ["title":"Test Event1", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event2", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event3", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event4", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event5", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event6", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event7", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event8", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event9", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event10", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event11", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event12", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event13", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event14", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event14", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"],
-            ["title":"Test Event15", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.665060", "latitude":"35.302268"]
+            ["title":"Test Event1", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event2", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event3", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event4", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event5", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event6", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event7", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event8", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event9", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event10", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event11", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event12", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event13", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event14", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event14", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"],
+            ["title":"Test Event15", "location":"197-204", "time":"2007-04-05T14:30", "longitude":"-120.664129", "latitude":"35.302474"]
         ]
         return true
     }

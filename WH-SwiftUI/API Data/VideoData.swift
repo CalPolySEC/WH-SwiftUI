@@ -37,8 +37,8 @@ class VideoNetworkManager: ObservableObject {
         loadData()
     }
     
-    private func loadData() {
-        guard let url = URL(string: "https://thewhitehat.club/api/v1/videos") else { return }
+    public func loadData() {
+        guard let url = URL(string: "https://cpsecurity.club/api/v1/videos") else { return }
         URLSession.shared.dataTask(with: url){ (data, _, _) in
           guard let data = data else { return }
             do {

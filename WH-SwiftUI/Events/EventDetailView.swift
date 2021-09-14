@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import URLImage
 import CoreLocation
 
 struct EventDetailView: View {
